@@ -7,6 +7,8 @@ import Contact from "./components/sections/Contact";
 import Moon from "./components/sections/Moon";
 import Background from "./components/sections/Background";
 
+//page.jsx는 서버 컴포넌트이므로, ref 전달은 클라이언트 컴포넌트에서 처리
+
 export default function Home() {
   return (
     <article className="main-content">

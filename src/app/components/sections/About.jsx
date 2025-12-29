@@ -5,9 +5,11 @@ import { FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useScrollContext } from "../../contexts/ScrollContext";
 
 export default function About() {
   const ref = useRef(null);
+  const { aboutRef } = useScrollContext();
   const isInView = useInView(ref, { once: false, amount: 0.4 });
 
   const variants = (delay) => ({
@@ -15,8 +17,13 @@ export default function About() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: delay } },
   });
 
+  const scaleVariants = (delay) => ({
+    hidden: { scale: 0.5 },
+    visible: { scale: 1, transition: { duration: 0.2, delay: delay } },
+  });
+
   return (
-    <section id="about">
+    <section ref={aboutRef} id="about">
       <div className="container">
         <div ref={ref} className="about-section section-layout">
           <div className="about-head">
@@ -38,7 +45,7 @@ export default function About() {
                 사용성과 효율성을 모두 고려한 UI 개발을 지향하며, <br />
                 협업과 소통을 통해 더 나은 서비스를 만들어 가는것을 좋아합니다.
               </p>
-              <ul className="desc space-y-2 text-gray-400">
+              <ul className="desc text-gray-400">
                 <li>
                   ✅ <strong className="text-white">원활한 협업</strong>과{" "}
                   <strong className="text-white">책임감 있는 태도</strong>를
@@ -80,16 +87,26 @@ export default function About() {
               </p> */}
             </motion.div>
             <div className="achievements-section">
-              <div className="achievement-item">
+              <motion.div
+                className="achievement-item"
+                variants={scaleVariants(0.1)}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+              >
                 <div className="achievement-icon">📦</div>
-                <div className="achievement-number">15+</div>
+                <div className="achievement-number">30+</div>
                 <div className="achievement-label">완성 프로젝트</div>
-              </div>
-              <div className="achievement-item">
+              </motion.div>
+              <motion.div
+                className="achievement-item"
+                variants={scaleVariants(0.2)}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+              >
                 <div className="achievement-icon">💻</div>
                 <div className="achievement-number">10+</div>
                 <div className="achievement-label">기술 스택</div>
-              </div>
+              </motion.div>
               <div className="achievement-item">
                 <div className="achievement-icon">📅</div>
                 <div className="achievement-number">2년+</div>

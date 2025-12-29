@@ -4,6 +4,7 @@ import Header from "./components/common/Header";
 import SideBar from "./components/common/SideBar";
 import Mouse from "./components/common/Mouse";
 import MainText from "./components/common/MainText";
+import { ScrollProvide } from "./contexts/ScrollContext";
 
 export const metadata = {
   title: "unibure portfolio",
@@ -25,11 +26,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body className={`${notoSansKR.variable} ${montserrat.variable}`}>
-        <Header />
-        <Mouse />
-        <MainText />
-
-        {children}
+        <ScrollProvide>
+          <Header />
+          <Mouse />
+          <MainText />
+          {children}
+        </ScrollProvide>
       </body>
     </html>
   );

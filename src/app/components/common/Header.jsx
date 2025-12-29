@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useScrollContext } from "../../contexts/ScrollContext";
 
 const gnbAni = {
   initial: { opacity: 0 },
@@ -10,22 +11,7 @@ const gnbAni = {
 };
 
 export default function Header() {
-  // 부드러운 스크롤 함수
-  const smoothScrollTo = (targetId) => {
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
-  // 클릭 이벤트 핸들러
-  const handleNavClick = (e, targetId) => {
-    e.preventDefault(); // 기본 동작 방지
-    smoothScrollTo(targetId);
-  };
+  const { scrollToTop, handleNavClick } = useScrollContext();
 
   return (
     <header id="intro-header">
@@ -38,7 +24,7 @@ export default function Header() {
       >
         <div className="top-head">
           <h1 className="title">
-            <span data-cursor="title" data-name="welcome">
+            <span data-cursor="title" data-name="welcome" onClick={scrollToTop}>
               Goun.dev
             </span>
           </h1>
@@ -49,7 +35,7 @@ export default function Header() {
             {...gnbAni}
             href="#about"
             className="gnb-btn"
-            onClick={(e) => handleNavClick(e, "#about")}
+            onClick={(e) => handleNavClick(e, "about")}
           >
             <span className="num">01</span>
             <h2 className="gnb">About</h2>
@@ -67,7 +53,7 @@ export default function Header() {
             {...gnbAni}
             href="#career"
             className="gnb-btn"
-            onClick={(e) => handleNavClick(e, "#career")}
+            onClick={(e) => handleNavClick(e, "career")}
           >
             <span className="num">03</span>
             <h2 className="gnb">Career</h2>
@@ -76,7 +62,7 @@ export default function Header() {
             {...gnbAni}
             href="#project"
             className="gnb-btn"
-            onClick={(e) => handleNavClick(e, "#project")}
+            onClick={(e) => handleNavClick(e, "project")}
           >
             <span className="num">04</span>
             <h2 className="gnb">Project</h2>
@@ -85,7 +71,7 @@ export default function Header() {
             {...gnbAni}
             href="#contact"
             className="gnb-btn"
-            onClick={(e) => handleNavClick(e, "#contact")}
+            onClick={(e) => handleNavClick(e, "contact")}
           >
             <span className="num">05</span>
             <h2 className="gnb">Contact</h2>
@@ -93,11 +79,7 @@ export default function Header() {
         </motion.nav>
 
         <nav className="etc">
-          <a
-            href="https://github.com/goun-dev"
-            target="_blank"
-            className="icon"
-          >
+          <a href="https://github.com/unibure" target="_blank" className="icon">
             <svg
               width="42"
               height="40"

@@ -8,10 +8,12 @@ import {
   useInView,
 } from "framer-motion";
 import { useRef } from "react";
-
 import Link from "next/link";
+import { useScrollContext } from "../../contexts/ScrollContext";
 
 export default function Project() {
+  const { projectRef } = useScrollContext();
+
   // card 내용
   const cardList = [
     {
@@ -129,7 +131,7 @@ export default function Project() {
   );
 
   return (
-    <section id="project">
+    <section ref={projectRef} id="project">
       <div className="container">
         <div className="project-section">
           <h3 className="section-title">Project</h3>

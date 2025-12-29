@@ -2,8 +2,10 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useScrollContext } from "../../contexts/ScrollContext";
 
 export default function Career() {
+  const { careerRef } = useScrollContext();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.5 });
 
@@ -20,7 +22,7 @@ export default function Career() {
   });
 
   return (
-    <section id="career">
+    <section ref={careerRef} id="career">
       <div className="container">
         <div ref={ref} className="career-section section-layout">
           <h3 className="section-title">Career</h3>

@@ -1,8 +1,15 @@
 "use client";
-
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useScrollContext } from "../../contexts/ScrollContext.jsx";
 
 export default function Visual() {
+  const { contactRef, scrollToRef } = useScrollContext();
+
+  const scrollToContact = () => {
+    scrollToRef(contactRef);
+  };
+
   return (
     <section id="visual">
       <div className="visual-section">
@@ -86,6 +93,7 @@ export default function Visual() {
                 ease: [0.68, -0.55, 0.27, 1.55],
               }}
               className="pp-button"
+              onClick={scrollToContact}
             >
               Contact Me
             </motion.button>
