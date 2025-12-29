@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_49320" data-name="사각형 49320" width="100" height="100" transform="translate(-13960 -14112)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_693" data-name="마스크 그룹 693" transform="translate(13960 14112)" clip-path="url(#clip-path)">
+    <g id="그룹_3" data-name="그룹 3" transform="translate(-18296.91 -16258)">
+      <g id="그룹_2" data-name="그룹 2" transform="translate(4386.911 2195.998)">
+        <circle id="타원_1" data-name="타원 1" cx="8.327" cy="8.327" r="8.327" transform="translate(-8.327 -8.327)" fill="#61dafb"/>
+        <g id="그룹_1" data-name="그룹 1">
+          <ellipse id="타원_2" data-name="타원 2" cx="44.682" cy="17.06" rx="44.682" ry="17.06" transform="translate(-44.682 -17.06)" fill="none" stroke="#61dafb" stroke-width="4.062"/>
+          <ellipse id="타원_3" data-name="타원 3" cx="44.682" cy="17.06" rx="44.682" ry="17.06" transform="matrix(0.5, 0.866, -0.866, 0.5, -7.567, -47.224)" fill="none" stroke="#61dafb" stroke-width="4.062"/>
+          <ellipse id="타원_4" data-name="타원 4" cx="44.682" cy="17.06" rx="44.682" ry="17.06" transform="matrix(-0.5, 0.866, -0.866, -0.5, 37.114, -30.164)" fill="none" stroke="#61dafb" stroke-width="4.062"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
