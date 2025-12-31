@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function Mouse() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
   // Framer Motion을 사용한 부드러운 애니메이션
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -12,12 +10,22 @@ export default function Mouse() {
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 
+  // cursor-point 요소 위에 있는지 추적하는 상태
+  const [isHovering, setIsHovering] = useState(false);
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       mouseX.set(clientX - 20); // 커서 중앙에 위치하도록 조정
       mouseY.set(clientY - 20);
-      setMousePosition({ x: clientX, y: clientY });
+
+      // 마우스 위치에서 요소 확인
+      const element = document.elementFromPoint(clientX, clientY);
+      if (element) {
+        // cursor-point 클래스를 가진 요소 또는 그 자식 요소인지 확인
+        const cursorPointEl = element.closest(".cursor-point");
+        setIsHovering(!!cursorPointEl);
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -26,10 +34,11 @@ export default function Mouse() {
 
   return (
     <motion.div
-      className="mouse-circle"
+      className={`mouse-circle ${isHovering ? "cursor-point-active" : ""}`}
       style={{
         x: cursorX,
         y: cursorY,
+        scale: isHovering ? 0.7 : 1, //호버 시 크기 조정
       }}
       transition={{ type: "spring", stiffness: 500, damping: 28 }}
     />

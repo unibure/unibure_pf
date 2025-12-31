@@ -41,27 +41,36 @@ export default function About() {
             >
               <p className="desc text-gray-300">
                 안녕하세요. 저는 웹 프론트엔드 개발자{" "}
-                <strong className="text-white">이고운</strong>입니다. <br />
+                <strong className="text-white cursor-point">이고운</strong>
+                입니다. <br />
                 사용성과 효율성을 모두 고려한 UI 개발을 지향하며, <br />
                 협업과 소통을 통해 더 나은 서비스를 만들어 가는것을 좋아합니다.
               </p>
               <ul className="desc text-gray-400">
                 <li>
-                  ✅ <strong className="text-white">원활한 협업</strong>과{" "}
-                  <strong className="text-white">책임감 있는 태도</strong>를
-                  중요하게 생각합니다.
+                  ✅{" "}
+                  <strong className="text-white cursor-point">
+                    원활한 협업
+                  </strong>
+                  과{" "}
+                  <strong className="text-white cursor-point">
+                    책임감 있는 태도
+                  </strong>
+                  를 중요하게 생각합니다.
                 </li>
                 <li>
                   💡 항상{" "}
-                  <strong className="text-white">
+                  <strong className="text-white cursor-point">
                     사용자의 입장에서 생각하는 UX/UI
                   </strong>
                   를 고민합니다.
                 </li>
                 <li>
                   🚀 새로운 기술에 대한{" "}
-                  <strong className="text-white">학습과 도전</strong>을
-                  즐깁니다.
+                  <strong className="text-white cursor-point">
+                    학습과 도전
+                  </strong>
+                  을 즐깁니다.
                 </li>
               </ul>
 
@@ -92,9 +101,10 @@ export default function About() {
                 variants={scaleVariants(0.1)}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
+                whileHover={{ translateY: -5 }}
               >
                 <div className="achievement-icon">📦</div>
-                <div className="achievement-number">30+</div>
+                <div className="achievement-number">50+</div>
                 <div className="achievement-label">완성 프로젝트</div>
               </motion.div>
               <motion.div
@@ -102,21 +112,34 @@ export default function About() {
                 variants={scaleVariants(0.2)}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
+                whileHover={{ translateY: -5 }}
               >
                 <div className="achievement-icon">💻</div>
                 <div className="achievement-number">10+</div>
                 <div className="achievement-label">기술 스택</div>
               </motion.div>
-              <div className="achievement-item">
+              <motion.div
+                className="achievement-item"
+                variants={scaleVariants(0.3)}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                whileHover={{ translateY: -5 }}
+              >
                 <div className="achievement-icon">📅</div>
                 <div className="achievement-number">2년+</div>
                 <div className="achievement-label">개발 경력</div>
-              </div>
-              <div className="achievement-item">
+              </motion.div>
+              <motion.div
+                className="achievement-item"
+                variants={scaleVariants(0.4)}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                whileHover={{ translateY: -5 }}
+              >
                 <div className="achievement-icon">⭐</div>
                 <div className="achievement-number">100%</div>
                 <div className="achievement-label">완성된 프로젝트</div>
-              </div>
+              </motion.div>
             </div>
             <motion.div
               ref={ref}

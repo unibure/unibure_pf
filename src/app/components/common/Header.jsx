@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useScrollContext } from "../../contexts/ScrollContext";
+import { useRouter } from "next/navigation";
 
 const gnbAni = {
   initial: { opacity: 0 },

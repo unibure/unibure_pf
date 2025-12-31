@@ -7,12 +7,12 @@ export default function Moon() {
     <div className="moon-section">
       <motion.div
         className="moon-circle"
-        initial={{ opacity: 0, scale: 0, x: "35%", y: "10%" }}
+        initial={{ opacity: 0, scale: 0, x: "0%", y: "0%" }}
         animate={{
           opacity: 1,
           scale: 1,
-          x: "-55%",
-          y: "10%",
+          x: "-98%",
+          y: "0%",
           // rotate: 360, // 360도 회전 추가
         }}
         transition={{

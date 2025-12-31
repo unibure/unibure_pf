@@ -7,7 +7,7 @@ import {
   useTransform,
   useInView,
 } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { useScrollContext } from "../../contexts/ScrollContext";
 
@@ -17,10 +17,10 @@ export default function Project() {
   // card 내용
   const cardList = [
     {
-      name: "PLUG Golf",
-      thumb: "plug-golf",
-      link: "https://www.pluxity.com/plug_golf",
-      project: "Pluxity Brand Page - PLUG Golf",
+      name: "V Golf",
+      thumb: "v-golf",
+      link: "http://vgolf.ai/ko/",
+      project: "Pluxity Brand Page - V Golf",
       type: "클라이언트 프로젝트 | 2주 개발",
       stack: "HTML, CSS, JavaScript, GSAP, PHP, MySQL, 그누보드",
       feature: [
@@ -84,20 +84,56 @@ export default function Project() {
       ],
     },
   ];
+
   const infoControls = cardList.map(() => useAnimationControls());
   const contents = [useRef(null), useRef(null)];
-  const isInViews = contents.map((ref) =>
+
+  //스크롤 방향 감지
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // 스크롤 방향 감지
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll), { passive: true };
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  // 위에서 아래로 30% 일때 트리거
+  const isInViewDown = contents.map((ref) =>
     useInView(ref, {
       amount: 0.3, //요소의 30%가 보일때 트리거
-      once: false,
-      margin: "-100px 0px",
+      once: false, // 반복 트리거
     })
+  );
+
+  // 아래에서 위로 0% 일때 트리거
+  const isInViewUp = contents.map((ref) =>
+    useInView(ref, {
+      amount: 0, //요소의 0%가 보일때 트리거
+      once: false, // 반복 트리거
+    })
+  );
+
+  //스크롤 방향에 따라 선택
+  const isInViews = contents.map((_, index) =>
+    scrollDirection === "down" ? isInViewDown[index] : isInViewUp[index]
   );
 
   // 첫 번째 섹션용 ref
   const cardRefs = cardList.map(() => useRef(null));
+
   // 두 번째 섹션용 별도 ref
   const cardRefs2 = ecatalogCardList.map(() => useRef(null));
+
   // 첫 번째 섹션용 스크롤 진행률
   const scrollYProgress = cardRefs.map((ref, index) => {
     const offset = [
@@ -123,6 +159,7 @@ export default function Project() {
       offset: offset[index],
     }).scrollYProgress;
   });
+
   const cardWidths = scrollYProgress.map((progress) =>
     useTransform(progress, [0, 1], ["80%", "100%"])
   );
