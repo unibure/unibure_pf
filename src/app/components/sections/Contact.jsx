@@ -24,7 +24,7 @@ export default function Contact() {
       //2초 후 복사 상태 초기화
       setTimeout(() => {
         setCopied(false);
-      }, 20000);
+      }, 2000);
     } catch (err) {
       console.error("복사 실패:", err);
     }
@@ -41,7 +41,7 @@ export default function Contact() {
         animate={
           isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0.5 }
         }
-        transition={{ duration: 1.5, ease: [0.175, 0.885, 0.32, 1.275] }}
+        transition={{ duration: 1, ease: [0.175, 0.885, 0.32, 1.275] }}
         className="container"
       >
         <div className="contact-cont">

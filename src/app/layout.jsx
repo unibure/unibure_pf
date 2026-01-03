@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Montserrat, Noto_Sans_KR } from "next/font/google";
 import Header from "./components/common/Header";
-import SideBar from "./components/common/SideBar";
 import Mouse from "./components/common/Mouse";
 import MainText from "./components/common/MainText";
 import { ScrollProvide } from "./contexts/ScrollContext";

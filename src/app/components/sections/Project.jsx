@@ -17,19 +17,6 @@ export default function Project() {
   // card 내용
   const cardList = [
     {
-      name: "V Golf",
-      thumb: "v-golf",
-      link: "http://vgolf.ai/ko/",
-      project: "Pluxity Brand Page - V Golf",
-      type: "클라이언트 프로젝트 | 2주 개발",
-      stack: "HTML, CSS, JavaScript, GSAP, PHP, MySQL, 그누보드",
-      feature: [
-        "GSAP 스크롤 트리그 애니메이션 구현",
-        "반응형 브랜드 스토리텔링 페이지",
-        "그누보드 CMS 콘텐츠 관리 시스템",
-      ],
-    },
-    {
       name: "FLEX",
       thumb: "flex",
       link: "https://flextools.co.kr",
@@ -40,6 +27,19 @@ export default function Project() {
         "회원가입/로그인/회원정보 관리",
         "제품 등록 5단계 프로세스 구현 (제품선택 → 정보입력 → 등록완료)",
         "JSON 기반 제품 데이터 관리",
+      ],
+    },
+    {
+      name: "V Golf",
+      thumb: "vgolf",
+      link: "http://vgolf.ai/ko/",
+      project: "Pluxity Brand Page - V Golf",
+      type: "클라이언트 프로젝트 | 2주 개발",
+      stack: "HTML, CSS, JavaScript, GSAP, PHP, MySQL, 그누보드",
+      feature: [
+        "GSAP 스크롤 트리그 애니메이션 구현",
+        "반응형 브랜드 스토리텔링 페이지",
+        "그누보드 CMS 콘텐츠 관리 시스템",
       ],
     },
     {
@@ -161,10 +161,10 @@ export default function Project() {
   });
 
   const cardWidths = scrollYProgress.map((progress) =>
-    useTransform(progress, [0, 1], ["80%", "100%"])
+    useTransform(progress, [0, 1], ["50%", "100%"])
   );
   const cardWidths2 = scrollYProgress2.map((progress) =>
-    useTransform(progress, [0, 1], ["80%", "100%"])
+    useTransform(progress, [0, 1], ["50%", "100%"])
   );
 
   return (
@@ -198,6 +198,7 @@ export default function Project() {
                       </h4>
                       <motion.div
                         onHoverStart={() => {
+                          console.log("hover start");
                           infoControls[index].start({
                             borderRadius: "40px",
                           });
@@ -210,10 +211,11 @@ export default function Project() {
                         className="item"
                       >
                         <span className="thumb">
-                          {/* <img
+                          <img
                             src={`/images/project-${item.thumb}-thumb.png`}
-                            alt="plug-golf"
-                          /> */}
+                            alt={item.name}
+                            loading="lazy"
+                          />
                         </span>
                         <motion.div
                           initial={{
@@ -226,7 +228,7 @@ export default function Project() {
                             borderRadius: { duration: 0.5, delay: 0.2 },
                             ease: [0.175, 0.885, 0.32, 1.275],
                           }}
-                          className="project-info"
+                          className="project-info cursor-point"
                         >
                           <ul>
                             <li className="info">
@@ -242,7 +244,7 @@ export default function Project() {
                               <span className="value">{item.stack}</span>
                             </li>
                             <li className="info">
-                              <span className="key">Feature </span>
+                              <span className="key">Role :</span>
                               <ul className="value feature bullet">
                                 {item.feature.map((feature, index) => (
                                   <li key={index}>{feature}</li>
@@ -306,8 +308,9 @@ export default function Project() {
                       >
                         <span className="thumb">
                           <img
-                            src={`/images/project-${item.thumb}-thumb.jpg`}
-                            alt="plug-golf"
+                            src={`/images/project-${item.thumb}-thumb.png`}
+                            alt={item.name}
+                            loading="lazy"
                           />
                         </span>
                         <motion.div
@@ -321,7 +324,7 @@ export default function Project() {
                             borderRadius: { duration: 0.5, delay: 0.2 },
                             ease: [0.175, 0.885, 0.32, 1.275],
                           }}
-                          className="project-info"
+                          className="project-info cursor-point"
                         >
                           <ul>
                             <li className="info">
@@ -337,7 +340,7 @@ export default function Project() {
                               <span className="value">{item.stack}</span>
                             </li>
                             <li className="info">
-                              <span className="key">Feature </span>
+                              <span className="key">Role : </span>
                               <ul className="value feature bullet">
                                 {item.feature.map((feature, index) => (
                                   <li key={index}>{feature}</li>

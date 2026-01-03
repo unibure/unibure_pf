@@ -22,7 +22,11 @@ export default function Career() {
   });
 
   return (
-    <section ref={careerRef} id="career">
+    <section
+      ref={careerRef}
+      id="career"
+      className={isInView ? "section-active" : ""}
+    >
       <div className="container">
         <div ref={ref} className="career-section section-layout">
           <h3 className="section-title">Career</h3>
