@@ -36,12 +36,12 @@ export default function Contact() {
       id="contact"
       className="contact-section section-layout"
     >
-      <motion.div
-        initial={{ scale: 0.3, opacity: 0.5 }}
-        animate={
-          isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0.5 }
-        }
-        transition={{ duration: 1, ease: [0.175, 0.885, 0.32, 1.275] }}
+      <div
+        // initial={{ scale: 0.3, opacity: 0.5 }}
+        // animate={
+        //   isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0.5 }
+        // }
+        // transition={{ duration: 1, ease: [0.175, 0.885, 0.32, 1.275] }}
         className="container"
       >
         <div className="contact-cont">
@@ -86,7 +86,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -1,8 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useResponsive } from "../../hooks/useResponsive";
 
 export default function Moon() {
+  const xValue = useResponsive({
+    mobile: "0%",
+    tablet: "0%",
+    desktop: "-110%",
+  });
   return (
     <div className="moon-section">
       <motion.div
@@ -11,7 +17,7 @@ export default function Moon() {
         animate={{
           opacity: 1,
           scale: 1,
-          x: "-98%",
+          x: xValue,
           y: "0%",
           // rotate: 360, // 360도 회전 추가
         }}
@@ -28,7 +34,7 @@ export default function Moon() {
           // },
         }}
       >
-        <div className="outer"></div>
+        <div className="outer">{/* stroke 애니메이션 추가 하기 */}</div>
         <div className="inner"></div>
         {/* 궤도 위의 점 - moon-circle의 border 주변을 돌도록 수정 */}
         <motion.div
@@ -41,7 +47,7 @@ export default function Moon() {
           transition={{
             opacity: { delay: 2.5 },
             delay: 2,
-            duration: 15, // 궤도 점은 15초로 조금 빠르게
+            duration: 10, // 궤도 점은 15초로 조금 빠르게
             ease: "linear",
             repeat: Infinity,
           }}

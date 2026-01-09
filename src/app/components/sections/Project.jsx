@@ -180,7 +180,7 @@ export default function Project() {
                 <h4 className="project-title">Homepage</h4>
                 <span className="info">
                   "다양한 기업 홈페이지 제작 경험" <br />
-                  반응형 디자인, SEO 최적화, 관리자 페이지 개발 등등
+                  반응형 디자인, SEO 최적화, 관리자 페이지 개발 등
                 </span>
               </motion.div>
 
@@ -198,7 +198,6 @@ export default function Project() {
                       </h4>
                       <motion.div
                         onHoverStart={() => {
-                          console.log("hover start");
                           infoControls[index].start({
                             borderRadius: "40px",
                           });

@@ -10,6 +10,7 @@ const ScrollContext = createContext();
 
 export function ScrollProvide({ children }) {
   // 모든 섹션 ref 관리
+  const visualRef = useRef(null);
   const aboutRef = useRef(null);
   const careerRef = useRef(null);
   const projectRef = useRef(null);
@@ -25,6 +26,7 @@ export function ScrollProvide({ children }) {
 
       //각 섹션의 위치 확인
       const sections = [
+        { name: "visual", ref: visualRef },
         { name: "about", ref: aboutRef },
         { name: "career", ref: careerRef },
         { name: "project", ref: projectRef },
@@ -57,13 +59,26 @@ export function ScrollProvide({ children }) {
 
   //ref를 사용한 스크롤 함수
   const scrollToRef = (ref) => {
-    console.log(ref);
-    if (ref?.current) {
-      window.scrollTo({
-        top: ref.current.offsetTop,
-        behavior: "smooth",
-      });
-    }
+    if (!ref?.current) return;
+
+    // 첫 번째 이동
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // 레이아웃이 변했을 것을 대비해 한 번 더 이동
+    // setTimeout(() => {
+    //   console.log("0.4초 체크");
+    //   ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    // }, 300);
+
+    // setTimeout(() => {
+    //   console.log("0.6초 체크");
+    //   ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    // }, 600);
+
+    // setTimeout(() => {
+    //   console.log("0.9초 체크");
+    //   ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    // }, 900);
   };
 
   //상단으로 스크롤 함수
@@ -82,6 +97,8 @@ export function ScrollProvide({ children }) {
     //섹션 이름에 따라 해당 ref 찾기
     let targetRef = null;
     switch (sectionName) {
+      case "visual":
+        targetRef = visualRef;
       case "about":
         targetRef = aboutRef;
         break;
@@ -102,6 +119,7 @@ export function ScrollProvide({ children }) {
   };
 
   const value = {
+    visualRef,
     aboutRef,
     careerRef,
     projectRef,

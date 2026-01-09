@@ -207,7 +207,7 @@ export default function About() {
                         <img
                           src={`/images/github-logo-white.svg`}
                           alt="github"
-                          className="w-[50px]"
+                          className="w-[50px] tablet:w-[40px]"
                         />
                       </span>
                     </li>
@@ -217,7 +217,7 @@ export default function About() {
                         <img
                           src={`/images/figma-logo.svg`}
                           alt="figma"
-                          className="w-[47px]"
+                          className="w-[47px] tablet:w-[40px]"
                         />
                       </span>
                     </li>
