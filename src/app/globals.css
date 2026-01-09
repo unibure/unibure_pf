@@ -68,8 +68,8 @@ body {
   .pc-br { display: none; } 
   .t-br { display: block; } 
 }
-@media screen and (max-width:768px){
-
+@media screen and (max-width:767px){
+  .bullet > li:before {width: 4px;height: 4px;margin-top:.6rem; margin-right: .5rem;}
 }
 
 /* mouse custom */
@@ -109,7 +109,7 @@ body {
 @media screen and (max-width:1399px){
 #side-bar .side-bar-item .gnb {font-size:3rem;}
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
 
 }
 
@@ -167,8 +167,12 @@ body {
   #intro-header .etc .icon svg {width: 33px;}
   #intro-header .etc .menu-btn {width: 30px; height: 20px;}
 }
-
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
+  #intro-header .header .top-head .title {font-size: 1.25rem;}
+  #intro-header .etc {gap: 0.5rem;}
+  #intro-header .etc .icon svg {width: 26px;}
+  #intro-header .etc .menu-btn {width: 22px;height: 16px;}
+  #intro-header .etc .menu-btn .bar {height: 2px;}
 }
 
 .main-content {position: relative;}
@@ -208,16 +212,19 @@ section:nth-child(even) .container { background: #00000094; }
   .container {width: 100%; max-width: 100%;}
   section:not(#visual) .container {padding: 40px; width:calc(100% - 50px)}
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
+  section:not(#visual) .container {width: calc(100% - 20px); padding:30px 15px; border-radius: 16px;}
+  .pp-button {font-size: 0.75rem;}
+  .section-title {font-size: 1.5rem;}
 }
 
 
-.moon-section { display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; position: absolute; top:0; left:0;}
-.moon-section .moon-circle { width: clamp(70vh , 80vh, 90vh); height: clamp(70vh,80vh,90vh); aspect-ratio:1/1; border-radius: 50%; position: absolute; display: flex; align-items: center; justify-content: center;}
+.moon-section {--dot-size:14px; --moon-size:clamp(70vh,80vh,90vh);  display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; position: absolute; top:0; left:0;}
+.moon-section .moon-circle { width: var(--moon-size); height: var(--moon-size); aspect-ratio:1/1; border-radius: 50%; position: absolute; display: flex; align-items: center; justify-content: center;}
 .moon-section .moon-circle .outer { width: 100%; height: 100%; border-radius: 50%; border: 1px solid #006afe; background: #000; position: relative; }
 .moon-section .moon-circle .inner { width: 100%; height: 100%; border-radius: 50%; background: #006afe; position: absolute; z-index: -2; filter: blur(30px); }
-.orbit-dot { position:absolute; width: 14px; height: 14px; background-color: #fff; border-radius: 50%; top:-7px; left:calc(50% - 7px);  transform-origin: 50% calc(clamp(35vh,40vh,45vh) + 7px);}
 
+.orbit-dot { position:absolute; width: var(--dot-size); height: var(--dot-size); background-color: #fff; border-radius: 50%; top:calc(var(--dot-size) / -2); left:calc(50% - var(--dot-size) / 2);  transform-origin: 50% calc(var(--moon-size) / 2 + var(--dot-size) / 2);}
 
 /* visual */
 #visual { background: transparent; backdrop-filter: none; border: none; padding: 0; margin: 0;position: relative;}
@@ -228,15 +235,18 @@ section:nth-child(even) .container { background: #00000094; }
 
 
 @media screen and (max-width:1399px){
-  .moon-section .moon-circle {width: 550px; height: 550px;}
-  .orbit-dot { width: 10px;height: 10px; top:-5px; left:calc(50% - 5px); transform-origin:50% calc(275px + 5px);}
+  .moon-section {--dot-size:10px; --moon-size:550px;}
   #visual .container {display: flex; align-items: center; justify-content: center;}
   .visual-section .visual-head {min-width: 600px; width: 600px; transform:none; position: static; }
   .visual-section .visual-head .typo {text-align: center; }
   .visual-section .visual-head .typo .tit-box {display: flex; align-items: center; justify-content: center;}
   .visual-section .visual-head .typo .tit-box .tit {font-size: 2.5rem; transform-origin:left; }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
+  .moon-section {--moon-size:300px; --dot-size:6px;}
+  .visual-section .visual-head {min-width: auto; width: 100%;}
+  .visual-section .visual-head .typo {padding-bottom: 2rem;}
+  .visual-section .visual-head .typo .tit-box .tit {font-size: 1.5rem;}
 }
 
 #about {}
@@ -260,7 +270,6 @@ section:nth-child(even) .container { background: #00000094; }
 }
 
 @media screen and (max-width: 1399px) {
-  #about .achievements-grid {grid-template-columns: repeat(2, 1fr); gap: 1.5rem;}
   #about .about-section .about-cont .desc {font-size: 1rem;}
   #about .achievement-number {font-size: 1.5rem;}
   #about .achievement-icon {font-size: 2rem;}
@@ -269,11 +278,15 @@ section:nth-child(even) .container { background: #00000094; }
   #about .about-head .profile-img {position: absolute; right:0; top:0; width: auto;}
   #about .about-head .profile-img img {width: 200px;}
 }
-@media screen and (max-width: 768px) {
-  #about .achievements-grid {grid-template-columns: repeat(2, 1fr); gap: 1rem;} 
+@media screen and (max-width: 767px) {
+  #about .about-head .profile-img {position: static;}
+  #about .about-head .profile-img img {margin: 0 auto;}
+  #about .achievements-section {grid-template-columns: repeat(2,1fr); gap: 0.5rem;}
   #about .achievement-item {padding: 1.5rem 0.5rem;} 
   #about .achievement-icon {font-size: 2rem;} 
   #about .achievement-number {font-size: 1.8rem;}
+  #about .about-head .profile-img img {width: 150px;}
+  #about .about-section .about-cont .desc {font-size: 0.875rem; letter-spacing: 0;}
 }
 
 
@@ -294,10 +307,13 @@ section:nth-child(even) .container { background: #00000094; }
     .skill-cont .skill-item .skill-list .item {min-width: 90px; padding-block: .5rem 1rem;}
     .skill-cont .skill-item .skill-list .item .icon {width: 60px; height: 60px;}
     .skill-cont .skill-item .skill-list .item .sbj {font-size: 0.875rem;}
-    
-
   }
-  @media screen and (max-width:768px){
+  @media screen and (max-width:767px){
+    .skill-cont .skill-item .skill-list {flex-wrap: wrap; gap: .5rem;}
+    .skill-cont .skill-item .skill-list .item {min-width: auto;}
+    .skill-cont .skill-item:nth-child(1) .skill-list {display: grid;grid-template-columns: repeat(3,1fr);}
+    .skill-cont .skill-item .skill-list .item .sbj {font-size: 0.75rem;}
+    .skill-cont .skill-item:nth-child(2) .skill-list {display: grid;grid-template-columns: repeat(2,1fr);}
   }
 } 
 
@@ -321,7 +337,12 @@ section:nth-child(even) .container { background: #00000094; }
     .career-cont .career-item .desc .item {font-size: 1rem;}
     .career-cont .career-item .desc .item:before {width: 5px; height: 5px;}
   }
-  @media screen and (max-width:768px){
+  @media screen and (max-width:767px){
+    .career-cont {gap: 1rem;}
+    .career-cont .career-item {padding: 30px 20px;}
+    .career-cont .career-item .sbj {font-size: 1.25rem;}
+    .career-cont .career-item .head {font-size: 1rem;}
+    .career-cont .career-item .desc .item {font-size: .875rem;}
   }
 }
 
@@ -374,7 +395,15 @@ section:nth-child(even) .container { background: #00000094; }
    .card-ls .card .item .project-info {padding: 2rem 1.5rem 4rem;}
    .card-ls .card .item .project-info .button a {font-size: 0.875rem;}
   }
-  @media screen and (max-width:768px){
+  @media screen and (max-width:767px){
+    .project-head .project-title {font-size: 1.125rem;}
+    .project-head .info {font-size: 1rem;}
+    .card-ls .card {min-height:auto; padding: 20px;}
+    .card-ls .card .project-name {font-size: 1rem;}
+    .card-ls .card .item .project-info {padding: 10px; flex-direction: column; gap: .5rem}
+    .card-ls .card .item .project-info .button {position: static; } 
+    .card-ls .card .item .project-info .button > a {padding: .4rem ;} 
+    .card-ls .card .item .project-info .info {font-size: 0.875rem;}
   }
 
 }
@@ -414,6 +443,14 @@ section#contact .container {background: var(--white) ; width: 80% ; padding-bloc
   
 
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
+  section#contact .container {width:calc(100% - 30px); padding:0;}
+  #contact .contact-tit {font-size: 2.5rem;}
+  #contact .desc {text-align: center;}
+  #contact .contact-cont {height: auto; padding: 2rem 1rem;}
+  #contact .contact-info {width: 100%;}
+  #contact .contact-info .info {font-size: 0.875rem;}
+  #contact .contact-info .info .value {width: 100%;}
+  #contact .contact-info .info .copy-message {display: none;}
 }
 

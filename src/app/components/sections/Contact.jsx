@@ -47,7 +47,8 @@ export default function Contact() {
         <div className="contact-cont">
           <h4 className="contact-tit">Contact Me</h4>
           <span className="desc">
-            감사합니다. 더 궁금하신 점이 있다면 편하게 연락주세요.
+            감사합니다. <br className="m-br" /> 더 궁금하신 점이 있다면 편하게
+            연락주세요.
           </span>
           <div className="contact-info">
             <div className="info cursor-point">

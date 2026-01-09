@@ -211,7 +211,7 @@ export default function Project() {
                       >
                         <span className="thumb">
                           <img
-                            src={`/images/project-${item.thumb}-thumb.png`}
+                            src={`/images/project-${item.thumb}-thumb.jpg`}
                             alt={item.name}
                             loading="lazy"
                           />
@@ -255,7 +255,7 @@ export default function Project() {
                             <Link
                               target="_blank"
                               href={`${item.link}`}
-                              className="button"
+                              className="btn"
                             >
                               View Project
                             </Link>
@@ -307,7 +307,7 @@ export default function Project() {
                       >
                         <span className="thumb">
                           <img
-                            src={`/images/project-${item.thumb}-thumb.png`}
+                            src={`/images/project-${item.thumb}-thumb.jpg`}
                             alt={item.name}
                             loading="lazy"
                           />
@@ -351,7 +351,7 @@ export default function Project() {
                             <Link
                               target="_blank"
                               href={`${item.link}`}
-                              className="button"
+                              className="btn"
                             >
                               View Project
                             </Link>

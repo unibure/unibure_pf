@@ -12,7 +12,7 @@ export const metadata = {
 
 const notoSansKR = Noto_Sans_KR({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin", "korean"],
+  subsets: ["latin"],
   variable: "--ff-primary",
 });
 const montserrat = Montserrat({

@@ -115,7 +115,7 @@ export default function About() {
                 whileHover={{ translateY: -5 }}
               >
                 <div className="achievement-icon">💻</div>
-                <div className="achievement-number">10+</div>
+                <div className="achievement-number">5+</div>
                 <div className="achievement-label">기술 스택</div>
               </motion.div>
               <motion.div
