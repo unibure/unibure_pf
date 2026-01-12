@@ -10,10 +10,11 @@ import {
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { useScrollContext } from "../../contexts/ScrollContext";
+import { useScreenSize } from "../../hooks/useResponsive";
 
 export default function Project() {
   const { projectRef } = useScrollContext();
-
+  const { isMobile } = useScreenSize();
   // card 내용
   const cardList = [
     {
@@ -130,10 +131,8 @@ export default function Project() {
 
   // 첫 번째 섹션용 ref
   const cardRefs = cardList.map(() => useRef(null));
-
   // 두 번째 섹션용 별도 ref
   const cardRefs2 = ecatalogCardList.map(() => useRef(null));
-
   // 첫 번째 섹션용 스크롤 진행률
   const scrollYProgress = cardRefs.map((ref, index) => {
     const offset = [
@@ -146,7 +145,6 @@ export default function Project() {
       offset: offset[index],
     }).scrollYProgress;
   });
-
   // 두 번째 섹션용 스크롤 진행률
   const scrollYProgress2 = cardRefs2.map((ref, index) => {
     const offset = [
@@ -191,24 +189,12 @@ export default function Project() {
                       ref={cardRefs[index]}
                       className="card"
                       key={index}
-                      style={{ width: cardWidths[index] }}
+                      style={{ width: isMobile ? "100%" : cardWidths[index] }}
                     >
                       <h4 className="project-name">
                         0{index + 1}. {item.name}{" "}
                       </h4>
-                      <motion.div
-                        onHoverStart={() => {
-                          infoControls[index].start({
-                            borderRadius: "40px",
-                          });
-                        }}
-                        onHoverEnd={() => {
-                          infoControls[index].start({
-                            borderRadius: "10px",
-                          });
-                        }}
-                        className="item"
-                      >
+                      <div className="item">
                         <span className="thumb">
                           <img
                             src={`/images/project-${item.thumb}-thumb.jpg`}
@@ -261,7 +247,7 @@ export default function Project() {
                             </Link>
                           </motion.span>
                         </motion.div>
-                      </motion.div>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
@@ -287,24 +273,12 @@ export default function Project() {
                       ref={cardRefs2[index]} // 별도 ref 사용
                       className="card"
                       key={`second-${index}`} // 고유한 key
-                      style={{ width: cardWidths2[index] }} // 별도 width
+                      style={{ width: isMobile ? "100%" : cardWidths2[index] }} // 별도 width
                     >
                       <h4 className="project-name">
                         0{index + 1}. {item.name}{" "}
                       </h4>
-                      <motion.div
-                        onHoverStart={() => {
-                          infoControls[index].start({
-                            borderRadius: "40px",
-                          });
-                        }}
-                        onHoverEnd={() => {
-                          infoControls[index].start({
-                            borderRadius: "10px",
-                          });
-                        }}
-                        className="item"
-                      >
+                      <div className="item">
                         <span className="thumb">
                           <img
                             src={`/images/project-${item.thumb}-thumb.jpg`}
@@ -357,7 +331,7 @@ export default function Project() {
                             </Link>
                           </motion.span>
                         </motion.div>
-                      </motion.div>
+                      </div>
                     </motion.div>
                   ))}
                 </div>

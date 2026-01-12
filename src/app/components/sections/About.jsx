@@ -156,7 +156,6 @@ export default function About() {
               id="skill"
               className="skill-section"
             >
-              {/* <h3 className="section-title-sml">Skill & Tools</h3> */}
               <div className="skill-cont">
                 <div className="skill-item">
                   <span className="skill-tit">Front End</span>
