@@ -164,37 +164,37 @@ export default function About() {
                     <li className="item">
                       <span className="sbj">HTML</span>
                       <span className="icon">
-                        <img src={`/images/html-logo.svg`} alt="html" />
+                        <img src={`/images/html-logo.png`} alt="html" />
                       </span>
                     </li>
                     <li className="item">
                       <span className="sbj">CSS</span>
                       <span className="icon">
-                        <img src={`/images/css-logo.svg`} alt="css" />
+                        <img src={`/images/css-logo.png`} alt="css" />
                       </span>
                     </li>
                     <li className="item">
                       <span className="sbj">JavaScript</span>
                       <span className="icon">
-                        <img src={`/images/js-logo.svg`} alt="js" />
+                        <img src={`/images/js-logo.png`} alt="js" />
                       </span>
                     </li>
                     <li className="item">
                       <span className="sbj">React</span>
                       <span className="icon">
-                        <img src={`/images/react-logo.svg`} alt="react" />
+                        <img src={`/images/react-logo.png`} alt="react" />
                       </span>
                     </li>
                     <li className="item">
                       <span className="sbj">Next.js</span>
                       <span className="icon invert">
-                        <img src={`/images/nextjs-logo.svg`} alt="nextjs" />
+                        <img src={`/images/nextjs-logo.png`} alt="nextjs" />
                       </span>
                     </li>
                     <li className="item">
                       <span className="sbj">PHP</span>
                       <span className="icon">
-                        <img src={`/images/php-logo.svg`} alt="nextjs" />
+                        <img src={`/images/php-logo.png`} alt="nextjs" />
                       </span>
                     </li>
                   </ul>
@@ -205,14 +205,14 @@ export default function About() {
                     <li className="item">
                       <span className="sbj">Git</span>
                       <span className="icon">
-                        <img src={`/images/git-logo-white.svg`} alt="git" />
+                        <img src={`/images/git-logo-white.png`} alt="git" />
                       </span>
                     </li>
                     <li className="item">
                       <span className="sbj">GitHub</span>
                       <span className="icon">
                         <img
-                          src={`/images/github-logo-white.svg`}
+                          src={`/images/github-logo-white.png`}
                           alt="github"
                           className="w-[50px] tablet:w-[40px]"
                         />
@@ -222,7 +222,7 @@ export default function About() {
                       <span className="sbj">Figma</span>
                       <span className="icon">
                         <img
-                          src={`/images/figma-logo.svg`}
+                          src={`/images/figma-logo.png`}
                           alt="figma"
                           className="w-[47px] tablet:w-[40px]"
                         />
@@ -231,14 +231,14 @@ export default function About() {
                     <li className="item">
                       <span className="sbj">Tailwind</span>
                       <span className="icon">
-                        <img src={`/images/tailwind-logo.svg`} alt="tailwind" />
+                        <img src={`/images/tailwind-logo.png`} alt="tailwind" />
                       </span>
                     </li>
                     <li className="item">
                       <span className="sbj">Adobe XD</span>
                       <span className="icon">
                         <img
-                          src={`/images/xd-logo.svg`}
+                          src={`/images/xd-logo.png`}
                           alt="adobe xd"
                           className="w-[47px]"
                         />
