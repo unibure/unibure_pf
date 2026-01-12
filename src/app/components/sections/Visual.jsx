@@ -6,7 +6,7 @@ import { useScreenSize } from "../../hooks/useResponsive";
 
 export default function Visual() {
   const { visualRef, contactRef, scrollToRef } = useScrollContext();
-  const { isMobile } = useScreenSize();
+  const { isDesktop } = useScreenSize();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -32,8 +32,8 @@ export default function Visual() {
                   className="tit tit-1"
                   initial={{
                     opacity: 0,
-                    width: isMobile ? "100%" : 0,
-                    y: isMobile ? 50 : 0,
+                    width: !isDesktop ? "100%" : 0,
+                    y: !isDesktop ? 50 : 0,
                   }}
                   animate={{
                     opacity: 1,
@@ -42,7 +42,7 @@ export default function Visual() {
                   }}
                   transition={{
                     duration: 2,
-                    delay: isMobile ? 2 : 3,
+                    delay: !isDesktop ? 2 : 3,
                     y: { duration: 1, delay: 2 },
                   }}
                 >
@@ -54,8 +54,8 @@ export default function Visual() {
                   className="tit tit-2"
                   initial={{
                     opacity: 0,
-                    width: isMobile ? "100%" : 0,
-                    y: isMobile ? 50 : 0,
+                    width: !isDesktop ? "100%" : 0,
+                    y: !isDesktop ? 50 : 0,
                   }}
                   animate={{
                     opacity: 1,
@@ -64,7 +64,7 @@ export default function Visual() {
                   }}
                   transition={{
                     duration: 2,
-                    delay: isMobile ? 1 : 3.5,
+                    delay: !isDesktop ? 1 : 3.5,
                     y: { duration: 1.2, delay: 2.7 },
                   }}
                 >
@@ -75,13 +75,13 @@ export default function Visual() {
                 <motion.span
                   initial={{
                     opacity: 0,
-                    width: isMobile ? "100%" : 0,
-                    y: isMobile ? 50 : 0,
+                    width: !isDesktop ? "100%" : 0,
+                    y: !isDesktop ? 50 : 0,
                   }}
                   animate={{ opacity: 1, width: "100%", y: 0 }}
                   transition={{
                     duration: 2,
-                    delay: isMobile ? 1 : 4,
+                    delay: !isDesktop ? 1 : 4,
                     y: {
                       duration: 1.2,
                       delay: 3.5,
@@ -98,7 +98,7 @@ export default function Visual() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 1,
-                delay: isMobile ? 4.3 : 5,
+                delay: !isDesktop ? 4.3 : 5,
                 ease: [0.68, -0.55, 0.27, 1.55],
               }}
               className="pp-button"

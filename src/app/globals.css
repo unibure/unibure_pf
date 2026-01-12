@@ -249,7 +249,7 @@ section:nth-child(even) .container { background: #00000094; }
   #visual .container {display: flex; align-items: center; justify-content: center;}
   .visual-section .visual-head {min-width: 600px; width: 600px; transform:none; position: static; }
   .visual-section .visual-head .typo {text-align: center; }
-  .visual-section .visual-head .typo .tit-box {display: flex; align-items: center; justify-content: center; display: block;}
+  .visual-section .visual-head .typo .tit-box {display: flex; align-items: center; justify-content: center; overflow:hidden;}
   .visual-section .visual-head .typo .tit-box .tit {font-size: 2.5rem; transform-origin:left; }
 }
 @media screen and (max-width:767px){
