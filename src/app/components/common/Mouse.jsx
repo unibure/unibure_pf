@@ -1,8 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useScreenSize } from "../../hooks/useResponsive";
 
 export default function Mouse() {
+  const { isDesktop } = useScreenSize();
+  const [mounted, setMounted] = useState(false);
+
   // Framer Motion을 사용한 부드러운 애니메이션
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -14,6 +18,13 @@ export default function Mouse() {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    //데스크탑에서만 마우스 이벤트 리스너 등록
+    if (!isDesktop || !mounted) return;
+
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       mouseX.set(clientX - 20); // 커서 중앙에 위치하도록 조정
@@ -30,7 +41,10 @@ export default function Mouse() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  }, [mouseX, mouseY, isDesktop, mounted]);
+
+  //데스크톱이 아니면 렌더링하지 않음
+  if (!isDesktop || !mounted) return null;
 
   return (
     <motion.div

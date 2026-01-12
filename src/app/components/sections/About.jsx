@@ -6,11 +6,18 @@ import { IoIosMail } from "react-icons/io";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useScrollContext } from "../../contexts/ScrollContext";
+import { useResponsive } from "../../hooks/useResponsive";
 
 export default function About() {
   const ref = useRef(null);
   const { aboutRef } = useScrollContext();
-  const isInView = useInView(ref, { once: false, amount: 0.4 });
+  const amountValue = useResponsive({
+    mobile: 0.3,
+    tablet: 0.3,
+    desktop: 0.4,
+  });
+
+  const isInView = useInView(ref, { once: false, amount: amountValue });
 
   const variants = (delay) => ({
     hidden: { opacity: 0, y: 100 },

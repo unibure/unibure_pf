@@ -51,22 +51,11 @@ export function useResponsive(values) {
 
 // 현재 화면 크기 정보를 반환하는 커스텀 훅
 export function useScreenSize() {
-  const [screenSize, setScreenSize] = useState(() => {
-    if (typeof window !== "undefined") {
-      const width = window.innerWidth;
-      return {
-        width,
-        isMobile: width <= BREAKPOINTS.mobile,
-        isTablet: width > BREAKPOINTS.mobile && width <= BREAKPOINTS.tablet,
-        isDesktop: width > BREAKPOINTS.tablet,
-      };
-    }
-    return {
-      width: 0,
-      isMobile: false,
-      isTablet: false,
-      isDesktop: true,
-    };
+  const [screenSize, setScreenSize] = useState({
+    width: 0,
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false,
   });
 
   useEffect(() => {

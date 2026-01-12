@@ -27,6 +27,7 @@
   
   --cubic1: cubic-bezier(0.68, -0.55, 0.27, 1.55); 
   --cubic2: cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+
 }
 
 
@@ -46,6 +47,7 @@ body {
   width: 100%; 
   height: 100%; 
   font-family: var(--ff-primary); 
+  font-size: 16px;
 }
 
 /* common */
@@ -67,6 +69,7 @@ body {
 @media screen and (max-width: 1399px) { 
   .pc-br { display: none; } 
   .t-br { display: block; } 
+  body {font-size: 14px;}
 }
 @media screen and (max-width:767px){
   .bullet > li:before {width: 4px;height: 4px;margin-top:.6rem; margin-right: .5rem;}
@@ -110,7 +113,9 @@ body {
 #side-bar .side-bar-item .gnb {font-size:3rem;}
 }
 @media screen and (max-width:767px){
-
+#side-bar .side-bar-item .gnb {font-size: 2rem;}
+#side-bar .side-bar-item > a span {font-size: 1rem;}
+#side-bar .side-bar-item > a .icon svg {width: 24px;}
 }
 
 
@@ -185,7 +190,12 @@ body {
 .main-typo { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 0; }
 .main-typo .parallax { overflow: hidden; white-space: nowrap; }
 .main-typo .parallax .scroller { display: flex; }
-.main-typo .parallax span { font-size: 200px; font-weight: 700; line-height: 1; white-space: nowrap; display: block; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); color: transparent; }
+.main-typo .parallax span { font-size: 12.5rem; font-weight: 700; line-height: 1; white-space: nowrap; display: block; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); color: transparent; }
+
+@media screen and (max-width:767px){
+  .main-typo .parallax span  {font-size: 6.25rem;}
+}
+
 
 /* components common */
 section {padding-block: 10rem;}
@@ -239,13 +249,14 @@ section:nth-child(even) .container { background: #00000094; }
   #visual .container {display: flex; align-items: center; justify-content: center;}
   .visual-section .visual-head {min-width: 600px; width: 600px; transform:none; position: static; }
   .visual-section .visual-head .typo {text-align: center; }
-  .visual-section .visual-head .typo .tit-box {display: flex; align-items: center; justify-content: center;}
+  .visual-section .visual-head .typo .tit-box {display: flex; align-items: center; justify-content: center; display: block;}
   .visual-section .visual-head .typo .tit-box .tit {font-size: 2.5rem; transform-origin:left; }
 }
 @media screen and (max-width:767px){
   .moon-section {--moon-size:300px; --dot-size:6px;}
   .visual-section .visual-head {min-width: auto; width: 100%;}
   .visual-section .visual-head .typo {padding-bottom: 2rem;}
+  .visual-section .visual-head .typo .tit-box {overflow: hidden;}
   .visual-section .visual-head .typo .tit-box .tit {font-size: 1.5rem;}
 }
 
