@@ -370,7 +370,7 @@ section:nth-child(even) .container { background: #00000094; }
   .project-head.active .project-title {color:#fff;}
 
   .card-ls {display: flex; flex-direction: column; gap: 10rem; min-height: 100vh;}
-  .card-ls .card {margin: 0 auto; width: 100%; border-radius: 15px;  padding: 50px 40px; background: #000; position:sticky; top:0; min-height: 980px; }
+  .card-ls .card {margin: 0 auto; width: 100%; border-radius: 15px;  padding: 50px 40px; background: #000; position:sticky; top:0; min-height: 900px; }
   .card-ls .card .project-name {font-size: 1.5rem; font-weight: 700; padding-bottom: 1rem;}
   .card-ls .card .item {display: flex; gap: 1rem; position: relative; width: 100%; flex-direction: column; backdrop-filter: blur(10px); opacity:0.6; transition: .3s var(--cubic2);}
   .card-ls .card .item .thumb {width: 100%; height: auto;border-radius: 15px; overflow: hidden; background: #363636;  transition: .3s var(--cubic2);  }
@@ -409,7 +409,7 @@ section:nth-child(even) .container { background: #00000094; }
     .card-ls .card .project-name {font-size: 1rem;}
     .card-ls .card .item .project-info {padding: 10px; flex-direction: column; gap: .5rem}
     .card-ls .card .item .project-info .button {position: static; } 
-    .card-ls .card .item .project-info .button > a {padding: .4rem ;} 
+    .card-ls .card .item .project-info .button > a {padding: .4rem; width: 100%; text-align: center;} 
     .card-ls .card .item .project-info .info {font-size: 0.875rem;}
   }
 }
