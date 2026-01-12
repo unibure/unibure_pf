@@ -180,7 +180,7 @@ body {
   #intro-header .etc .menu-btn .bar {height: 2px;}
 }
 
-.main-content {position: relative;}
+.main-content {position: relative; width: 100%;height: 100%;overflow: hidden;}
 
 /* visual-bar */
 .visual-bar { position: absolute; top: calc(100vh); left: 5%; width: 5px; height: 100%; background: rgba(255, 255, 255,0.2); z-index: 90; }
@@ -303,59 +303,58 @@ section:nth-child(even) .container { background: #00000094; }
 
 
 /* skill */
-#skill {
-  .section-title-sml {font-size: 2rem;}
-  .skill-cont {display: grid; grid-template-columns:1fr; gap: 2rem;padding-top: 3rem;} 
-  .skill-cont .skill-item {display: grid; gap: 1.4rem;}
-  .skill-cont .skill-item .skill-tit {font-size: 1.5rem; font-weight: 700; font-family: var(--ff-secondary);}
-  .skill-cont .skill-item .skill-list {display: flex; gap: 1.5rem;}
-  .skill-cont .skill-item .skill-list .item {display: flex; flex-direction: column-reverse; align-items: center; gap: .5rem; padding-bottom: 1rem; min-width: 110px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);}
-  .skill-cont .skill-item .skill-list .item .sbj {font-size: 1rem; font-weight: 500; font-family: var(--ff-secondary);}
-  .skill-cont .skill-item .skill-list .item .icon { width: 80px;height: 80px; padding:.7rem; display:flex; align-items:center; justify-content:center;}
+
+  #skill .section-title-sml {font-size: 2rem;}
+  #skill .skill-cont {display: grid; grid-template-columns:1fr; gap: 2rem;padding-top: 3rem;} 
+  #skill .skill-cont .skill-item {display: grid; gap: 1.4rem;}
+  #skill .skill-cont .skill-item .skill-tit {font-size: 1.5rem; font-weight: 700; font-family: var(--ff-secondary);}
+  #skill .skill-cont .skill-item .skill-list {display: flex; gap: 1.5rem;}
+  #skill .skill-cont .skill-item .skill-list .item {display: flex; flex-direction: column-reverse; align-items: center; gap: .5rem; padding-bottom: 1rem; min-width: 110px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);}
+  #skill .skill-cont .skill-item .skill-list .item .sbj {font-size: 1rem; font-weight: 500; font-family: var(--ff-secondary);}
+  #skill .skill-cont .skill-item .skill-list .item .icon { width: 80px; height: 80px; padding:.7rem; display:flex; align-items:center; justify-content:center;}
+  #skill .skill-cont .skill-item .skill-list .item .icon img {width: 100%; height: 100%; display: block;}
 
   @media screen and (max-width:1399px){
-    .skill-cont .skill-item .skill-tit {font-size: 1.25rem;}
-    .skill-cont .skill-item .skill-list .item {min-width: 90px; padding-block: .5rem 1rem;}
-    .skill-cont .skill-item .skill-list .item .icon {width: 60px; height: 60px;}
-    .skill-cont .skill-item .skill-list .item .sbj {font-size: 0.875rem;}
+    #skill .skill-cont .skill-item .skill-tit {font-size: 1.25rem;}
+    #skill .skill-cont .skill-item .skill-list .item {min-width: 90px; padding-block: .5rem 1rem;}
+    #skill .skill-cont .skill-item .skill-list .item .icon {width: 60px; height: 60px;}
+    #skill .skill-cont .skill-item .skill-list .item .sbj {font-size: 0.875rem;}
   }
   @media screen and (max-width:767px){
-    .skill-cont .skill-item .skill-list {flex-wrap: wrap; gap: .5rem;}
-    .skill-cont .skill-item .skill-list .item {min-width: auto;}
-    .skill-cont .skill-item:nth-child(1) .skill-list {display: grid;grid-template-columns: repeat(3,1fr);}
-    .skill-cont .skill-item .skill-list .item .sbj {font-size: 0.75rem;}
-    .skill-cont .skill-item:nth-child(2) .skill-list {display: grid;grid-template-columns: repeat(2,1fr);}
+    #skill .skill-cont .skill-item .skill-list {flex-wrap: wrap; gap: .5rem;}
+    #skill .skill-cont .skill-item .skill-list .item {min-width: auto;}
+    #skill .skill-cont .skill-item:nth-child(1) .skill-list {display: grid;grid-template-columns: repeat(3,1fr);}
+    #skill .skill-cont .skill-item .skill-list .item .sbj {font-size: 0.75rem;}
+    #skill .skill-cont .skill-item:nth-child(2) .skill-list {display: grid;grid-template-columns: repeat(2,1fr);}
   }
-} 
+
 
 /* career */
-#career {
-  .career-cont {display: grid; grid-template-columns: 1fr; gap: 3rem;}
-  .career-cont .career-item {width: 100%; height: 100%; border-radius: 15px;  padding: 50px 40px; border:1px solid #ffffff4a; background: #00000094;}
-  .career-cont .career-item .sbj {font-size: 2.5rem; font-weight: 700; padding-bottom: 1rem; font-family: var(--ff-secondary);}
-  .career-cont .career-item .head {padding-bottom: 2rem; line-height: 1.6; font-size: 1.5rem;}
-  .career-cont .career-item .head .year { display: block;}
-  .career-cont .career-item .head .company { display: block;}
-  .career-cont .career-item .desc {}
-  .career-cont .career-item .desc .item {position: relative; gap: 1rem; display: flex; align-items: flex-start; font-size: 1.125rem; padding-bottom: .3rem;}
-  .career-cont .career-item .desc .item:before {content:"";  width: 8px; height: 8px; background-color: #fff; border-radius: 50%; display: inline-block; margin-top: .8rem;}
-  .career-cont .career-item .desc .item .sbj {}
-  .career-cont .career-item .desc .item .desc {}
+  #career .career-cont {display: grid; grid-template-columns: 1fr; gap: 3rem;}
+  #career .career-cont .career-item {width: 100%; height: 100%; border-radius: 15px;  padding: 50px 40px; border:1px solid #ffffff4a; background: #00000094;}
+  #career .career-cont .career-item .sbj {font-size: 2.5rem; font-weight: 700; padding-bottom: 1rem; font-family: var(--ff-secondary);}
+  #career .career-cont .career-item .head {padding-bottom: 2rem; line-height: 1.6; font-size: 1.5rem;}
+  #career .career-cont .career-item .head .year { display: block;}
+  #career .career-cont .career-item .head .company { display: block;}
+  #career .career-cont .career-item .desc {}
+  #career .career-cont .career-item .desc .item {position: relative; gap: 1rem; display: flex; align-items: flex-start; font-size: 1.125rem; padding-bottom: .3rem;}
+  #career .career-cont .career-item .desc .item:before {content:"";  width: 8px; height: 8px; background-color: #fff; border-radius: 50%; display: inline-block; margin-top: .8rem;}
+  #career .career-cont .career-item .desc .item .sbj {}
+  #career .career-cont .career-item .desc .item .desc {}
 
   @media screen and (max-width:1399px){
-    .career-cont .career-item .sbj {font-size: 1.75rem;}
-    .career-cont .career-item .head {font-size: 1.25rem;}
-    .career-cont .career-item .desc .item {font-size: 1rem;}
-    .career-cont .career-item .desc .item:before {width: 5px; height: 5px;}
+    #career .career-cont .career-item .sbj {font-size: 1.75rem;}
+    #career .career-cont .career-item .head {font-size: 1.25rem;}
+    #career .career-cont .career-item .desc .item {font-size: 1rem;}
+    #career .career-cont .career-item .desc .item:before {width: 5px; height: 5px;}
   }
   @media screen and (max-width:767px){
-    .career-cont {gap: 1rem;}
-    .career-cont .career-item {padding: 30px 20px;}
-    .career-cont .career-item .sbj {font-size: 1.25rem;}
-    .career-cont .career-item .head {font-size: 1rem;}
-    .career-cont .career-item .desc .item {font-size: .875rem;}
+    #career .career-cont {gap: 1rem;}
+    #career .career-cont .career-item {padding: 30px 20px;}
+    #career .career-cont .career-item .sbj {font-size: 1.25rem;}
+    #career .career-cont .career-item .head {font-size: 1rem;}
+    #career .career-cont .career-item .desc .item {font-size: .875rem;}
   }
-}
 
 
 
