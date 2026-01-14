@@ -352,7 +352,7 @@ section:nth-child(even) .container { background: #00000094; }
   @media screen and (max-width:767px){
     #career .section-layout {gap:1rem;}
     #career .career-cont {gap: 1rem;}
-    #career .career-cont .career-item {padding: 30px 20px;}
+    #career .career-cont .career-item {padding: 30px 14px;}
     #career .career-cont .career-item .sbj {font-size: 1.25rem;}
     #career .career-cont .career-item .head {font-size: 1rem; padding-bottom: 1rem;}
     #career .career-cont .career-item .desc .item {font-size: .875rem; gap: .5rem;}

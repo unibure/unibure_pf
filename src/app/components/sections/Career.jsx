@@ -48,12 +48,28 @@ export default function Career() {
                 <li className="item">
                   HTML, CSS, JavaScript 기반의 웹 퍼블리싱
                 </li>
+                <li className="item">홈페이지 기획 및 디자인 및 유지보수</li>
                 <li className="item">PHP, 그누보드 기반의 홈페이지 개발</li>
                 <li className="item">
                   PHP, React, Next.js 기반의 전자카탈로그 개발
                 </li>
-                <li className="item">홈페이지 기획 및 디자인</li>
-                <li className="item">홈페이지 유지보수</li>
+                <li className="item">
+                  가비아/카페24 웹호스팅 환경에서 프로젝트 배포 및 운영 경험
+                </li>
+                <li className="item">
+                  도메인 연결, DNS 설정, SSL(Let’s Encrypt) 적용 및 자동 갱신
+                  구축
+                </li>
+                <li className="item">
+                  phpMyAdmin·DBeaver 기반 MySQL 관리 및 DB 백업/마이그레이션
+                  수행
+                </li>
+                <li className="item">
+                  Apache 웹 서버 및 SSH(Putty) 기반 서버 운영 경험
+                </li>
+                <li className="item">
+                  가비아 VPS(Ubuntu) 초기 서버 셋업 및 구축 경험
+                </li>
               </ul>
             </motion.div>
             <motion.div
