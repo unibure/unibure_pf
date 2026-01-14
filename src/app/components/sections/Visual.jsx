@@ -93,6 +93,24 @@ export default function Visual() {
                 </motion.span>
               </span>
             </div>
+            {isDesktop && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 4.5 }}
+                className="detail-desc"
+              >
+                <span className="desc">
+                  사용자에게는 편리함을, 팀에게는 신뢰를 제공합니다.
+                </span>
+                <span className="desc">
+                  <span className="primary ff-secondary font-medium">
+                    Web Front-End Developer
+                  </span>{" "}
+                  — 기획부터 개발·배포까지 웹 서비스 End-to-End 구축
+                </span>
+              </motion.div>
+            )}
             <motion.button
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
