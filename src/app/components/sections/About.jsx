@@ -48,7 +48,9 @@ export default function About() {
             >
               <p className="desc text-gray-300">
                 안녕하세요. 저는 웹 프론트엔드 개발자{" "}
-                <strong className="text-white cursor-point">이고운</strong>
+                <span className="text-white cursor-point font-semibold">
+                  이고운
+                </span>
                 입니다. <br />
                 사용성과 효율성을 모두 고려한 UI 개발을 지향하며, <br />
                 협업과 소통을 통해 더 나은 서비스를 만들어 가는것을 좋아합니다.
@@ -56,27 +58,27 @@ export default function About() {
               <ul className="desc text-gray-400">
                 <li>
                   ✅{" "}
-                  <strong className="text-white cursor-point">
+                  <span className="text-white cursor-point font-semibold">
                     원활한 협업
-                  </strong>
+                  </span>
                   과{" "}
-                  <strong className="text-white cursor-point">
+                  <span className="text-white cursor-point font-semibold">
                     책임감 있는 태도
-                  </strong>
+                  </span>
                   를 중요하게 생각합니다.
                 </li>
                 <li>
                   💡 항상{" "}
-                  <strong className="text-white cursor-point">
+                  <span className="text-white cursor-point font-semibold">
                     사용자의 입장에서 생각하는 UX/UI
-                  </strong>
+                  </span>
                   를 고민합니다.
                 </li>
                 <li>
                   🚀 새로운 기술에 대한{" "}
-                  <strong className="text-white cursor-point">
+                  <span className="text-white cursor-point font-semibold">
                     학습과 도전
-                  </strong>
+                  </span>
                   을 즐깁니다.
                 </li>
               </ul>
@@ -111,7 +113,7 @@ export default function About() {
                 whileHover={{ translateY: -5 }}
               >
                 <div className="achievement-icon">📦</div>
-                <div className="achievement-number">50+</div>
+                <div className="achievement-number">40+</div>
                 <div className="achievement-label">완성 프로젝트</div>
               </motion.div>
               <motion.div
@@ -179,6 +181,12 @@ export default function About() {
                       </span>
                     </li>
                     <li className="item">
+                      <span className="sbj">PHP</span>
+                      <span className="icon">
+                        <img src={`/images/php-logo.png`} alt="nextjs" />
+                      </span>
+                    </li>
+                    <li className="item">
                       <span className="sbj">React</span>
                       <span className="icon">
                         <img src={`/images/react-logo.png`} alt="react" />
@@ -188,12 +196,6 @@ export default function About() {
                       <span className="sbj">Next.js</span>
                       <span className="icon invert">
                         <img src={`/images/nextjs-logo.png`} alt="nextjs" />
-                      </span>
-                    </li>
-                    <li className="item">
-                      <span className="sbj">PHP</span>
-                      <span className="icon">
-                        <img src={`/images/php-logo.png`} alt="nextjs" />
                       </span>
                     </li>
                   </ul>

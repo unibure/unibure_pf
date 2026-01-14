@@ -22,7 +22,7 @@ export default function Project() {
       thumb: "flex",
       link: "https://flextools.co.kr",
       project: "FLEX Tools",
-      type: "클라이언트 프로젝트 | 2주 개발",
+      type: "클라이언트 프로젝트 | 4주 개발",
       stack: "HTML, CSS, JavaScript, PHP, MySQL, JSON, 그누보드",
       feature: [
         "회원가입/로그인/회원정보 관리",
@@ -48,7 +48,7 @@ export default function Project() {
       thumb: "txr",
       link: "https://www.txr.kr",
       project: "TXR",
-      type: "클라이언트 프로젝트 | 3주 개발",
+      type: "클라이언트 프로젝트 | 4주 개발",
       stack: "HTML, CSS, JavaScript, PHP, MySQL, 그누보드",
       feature: [
         "API 연동 기업 공시정보 시스템",
@@ -63,7 +63,7 @@ export default function Project() {
       thumb: "wisenut",
       link: "https://ecatalog.rgbcom.kr/WISENUT_use",
       project: "WISENUT",
-      type: "클라이언트 프로젝트 | 1주 개발",
+      type: "클라이언트 프로젝트 | 2주 개발",
       stack: "React,Tailwind CSS, Framer Motion",
       feature: [
         "React 컴포넌트 기반 모듈화 개발",
@@ -76,7 +76,7 @@ export default function Project() {
       thumb: "dt",
       link: "https://ecatalog.rgbcom.kr/DT/#/ko/intro",
       project: "DT",
-      type: "클라이언트 프로젝트 | 1주 개발",
+      type: "클라이언트 프로젝트 | 2주 개발",
       stack: "React,Tailwind CSS, Framer Motion",
       feature: [
         "React 컴포넌트 기반 모듈화 개발",

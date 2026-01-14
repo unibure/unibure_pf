@@ -118,6 +118,7 @@ body {
 }
 @media screen and (max-width:767px){
 #side-bar .side-bar-item .gnb {font-size: 2rem;}
+#side-bar .side-bar-item > a {width: calc(100% - 1rem); margin:0 auto;}
 #side-bar .side-bar-item > a span {font-size: 1rem;}
 #side-bar .side-bar-item > a .icon svg {width: 24px;}
 }
@@ -226,7 +227,7 @@ section:nth-child(even) .container { background: #00000094; }
 }
 @media screen and (max-width:767px){
   section:not(#visual) .container {width: calc(100% - 20px); padding:30px 15px; border-radius: 16px;}
-  .pp-button {font-size: 0.75rem;}
+  .pp-button {font-size: 0.75rem; padding: .5rem 1rem; border-radius: 10px;}
   .section-title {font-size: 1.5rem;}
 }
 
@@ -292,13 +293,14 @@ section:nth-child(even) .container { background: #00000094; }
   #about .about-head .profile-img img {width: 200px;}
 }
 @media screen and (max-width: 767px) {
+  #about .section-layout {gap: 1rem;}
+  #about .about-head {gap: 1rem;}
   #about .about-head .profile-img {position: static;}
-  #about .about-head .profile-img img {margin: 0 auto;}
+  #about .about-head .profile-img img {margin: 0 auto; width: 150px;}
   #about .achievements-section {grid-template-columns: repeat(2,1fr); gap: 0.5rem;}
   #about .achievement-item {padding: 1.5rem 0.5rem;} 
-  #about .achievement-icon {font-size: 2rem;} 
+  #about .achievement-icon {font-size: 2rem; margin-bottom: .5rem;} 
   #about .achievement-number {font-size: 1.8rem;}
-  #about .about-head .profile-img img {width: 150px;}
   #about .about-section .about-cont .desc {font-size: 0.875rem; letter-spacing: 0;}
 }
 
@@ -314,7 +316,7 @@ section:nth-child(even) .container { background: #00000094; }
   #skill .skill-cont .skill-item .skill-list .item {display: flex; flex-direction: column-reverse; align-items: center; gap: .5rem; padding-bottom: 1rem; min-width: 110px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);}
   #skill .skill-cont .skill-item .skill-list .item .sbj {font-size: 1rem; font-weight: 500; font-family: var(--ff-secondary);}
   #skill .skill-cont .skill-item .skill-list .item .icon { width: 80px; height: 80px; padding:.7rem; display:flex; align-items:center; justify-content:center;}
-  #skill .skill-cont .skill-item .skill-list .item .icon img {width: 100%; height: 100%; display: block;}
+  #skill .skill-cont .skill-item .skill-list .item .icon img {width: 100%; height: 100%; display: block; object-fit: contain;}
 
   @media screen and (max-width:1399px){
     #skill .skill-cont .skill-item .skill-tit {font-size: 1.25rem;}
@@ -348,13 +350,17 @@ section:nth-child(even) .container { background: #00000094; }
     #career .career-cont .career-item .desc .item:before {width: 5px; height: 5px;}
   }
   @media screen and (max-width:767px){
+    #career .section-layout {gap:1rem;}
     #career .career-cont {gap: 1rem;}
     #career .career-cont .career-item {padding: 30px 20px;}
     #career .career-cont .career-item .sbj {font-size: 1.25rem;}
-    #career .career-cont .career-item .head {font-size: 1rem;}
-    #career .career-cont .career-item .desc .item {font-size: .875rem;}
+    #career .career-cont .career-item .head {font-size: 1rem; padding-bottom: 1rem;}
+    #career .career-cont .career-item .desc .item {font-size: .875rem; gap: .5rem;}
+    #career .career-cont .career-item .desc .item:before {margin-top: .5rem;}
   }
-
+  @media screen and (max-width:399px){
+    #career .career-cont .career-item {padding: 30px 12px;}
+  }
 
 
 #project {
@@ -420,12 +426,15 @@ section:nth-child(even) .container { background: #00000094; }
 #contact {display: flex; flex-direction: column; }
 section#contact .container {background: var(--white) ; width: 80% ; padding-block: 0; max-width: 1400px;}
 #contact .contact-cont {width: 100%; height: 800px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 30px; color:#333 !important;}
-#contact .contact-tit {font-size: 5rem; font-weight: 900; font-family: var(--ff-secondary); padding-bottom: 1rem; }
-#contact .desc {font-size: 1.25rem; padding-bottom: 4rem;}
-#contact .contact-info {display: flex;flex-direction: column; gap: .5rem;}
+#contact .contact-tit {font-size: 5rem; font-weight: 900; font-family: var(--ff-secondary); }
+#contact .desc {font-size: 1.25rem;}
+#contact .down-link-btn { max-width: 300px; width: 100%; display: flex; align-items: center; justify-content: center;  transition: .3s var(--cubic2);}
+#contact .down-link-btn .link {display: flex; align-items: center; justify-content: center; gap:1rem;}
+#contact .down-link-btn .link .ico {margin-right: -.8rem;}
+#contact .contact-info {display: flex;flex-direction: column; gap: .5rem; padding-top: 3rem; max-width:400px; width: 100%;}
 #contact .contact-info .info {display: flex; gap: 1rem; align-items: center; position: relative;}
 #contact .contact-info .info .key {display:inline-flex;align-items: center; justify-content: center; color:var(--white); background: #333; padding: 0.5rem 1rem; border-radius: 10px; min-width: 100px; transition: .3s var(--cubic2);}
-#contact .contact-info .info .value {display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #333;padding:.5rem .2rem; min-width: 200px;}
+#contact .contact-info .info .value {display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #333;padding:.5rem .2rem; min-width: 200px; width: 100%;}
 #contact .contact-info .info .value .link { transition: .3s var(--cubic2);}
 #contact .contact-info .info .value .icon {margin-left: 2px;}
 #contact .contact-info .info .tooltip {position: absolute; bottom:100%; left:118px; background: #333; color:var(--white); padding:.5rem 1rem; border-radius: 10px; display: flex; white-space:nowrap; opacity: 0; pointer-events: none; transition:.2s var(--cubic2); pointer-events: none;}
@@ -451,10 +460,11 @@ section#contact .container {background: var(--white) ; width: 80% ; padding-bloc
 }
 @media screen and (max-width:767px){
   section#contact .container {width:calc(100% - 30px); padding:0;}
+  #contact .down-link-btn {max-width: 100%;}
   #contact .contact-tit {font-size: 2.5rem;}
   #contact .desc {text-align: center;}
   #contact .contact-cont {height: auto; padding: 2rem 1rem;}
-  #contact .contact-info {width: 100%;}
+  #contact .contact-info {width: 100%; padding-top: 0;}
   #contact .contact-info .info {font-size: 0.875rem;}
   #contact .contact-info .info .value {width: 100%;}
   #contact .contact-info .info .copy-message {display: none;}

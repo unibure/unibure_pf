@@ -7,7 +7,7 @@ export default function Moon() {
   const xValue = useResponsive({
     mobile: "0%",
     tablet: "0%",
-    desktop: "-110%",
+    desktop: "-115%",
   });
   return (
     <div className="moon-section">
