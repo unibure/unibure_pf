@@ -364,72 +364,70 @@ section:nth-child(even) .container { background: #00000094; }
   }
 
 
-#project {
-  .section-title {padding-bottom: 2rem;}
-  .project-section {width: 100%;}
-  .project-section .wrapper {display: flex; flex-direction: column; gap: 5rem;}
-  .project-section .content {display: grid;grid-template-columns:38% 1fr; min-height: 100vh; position: relative; align-items: start;}
+  #project .section-title {padding-bottom: 2rem;}
+  #project .project-section {width: 100%;}
+  #project .project-section .wrapper {display: flex; flex-direction: column; gap: 5rem;}
+  #project .project-section .content {display: grid;grid-template-columns:38% 1fr; min-height: 100vh; position: relative; align-items: start;}
 
-  .project-head {display: flex; flex-direction: column; position: sticky; top: 200px; align-self: start;color:#888;transition: .3s var(--cubic2);height: fit-content;}
-  .project-head .project-title {font-size: 2rem; font-family: var(--ff-secondary); font-weight: 500; padding-bottom: 1rem; }
-  .project-head .info {font-size: 1.25rem; line-height: 1.6; }
-  .project-head.active {color:#fff;}
-  .project-head.active .project-title {color:#fff;}
+  #project .project-head {display: flex; flex-direction: column; position: sticky; top: 200px; align-self: start;color:#888;transition: .3s var(--cubic2);height: fit-content;}
+  #project .project-head .project-title {font-size: 2rem; font-family: var(--ff-secondary); font-weight: 500; padding-bottom: 1rem; }
+  #project .project-head .info {font-size: 1.25rem; line-height: 1.6; white-space: pre-line;}
+  #project .project-head.active {color:#fff;}
+  #project .project-head.active .project-title {color:#fff;}
 
-  .card-ls {display: flex; flex-direction: column; gap: 10rem; min-height: 100vh;}
-  .card-ls .card {margin: 0 auto; width: 100%; border-radius: 15px;  padding: 50px 40px; background: #000; position:sticky; top:0; min-height: 900px; }
-  .card-ls .card .project-name {font-size: 1.5rem; font-weight: 700; padding-bottom: 1rem; display: none;}
-  .card-ls .card .item {display: flex; gap: 1rem; position: relative; width: 100%; flex-direction: column; backdrop-filter: blur(10px); opacity:0.6; transition: .3s var(--cubic2);}
-  .card-ls .card .item .thumb {width: 100%; height: 350px;border-radius: 15px; overflow: hidden; background: #363636;  transition: .3s var(--cubic2);  }
-  .card-ls .card .item .thumb img {width: 100%; height: 100%; object-fit: cover;  border-radius: 15px;transform:scale(1);  transition: .5s var(--cubic2);}
-  .card-ls .card .item .project-info {width: 100%; height: auto; color:var(--white); background: rgba(31, 31, 31, 0.5); border-radius: 10px; padding: 3rem 2rem 4.5rem; display: flex; flex-direction: column; overflow: hidden; position: relative; justify-content: space-between;}
-  .card-ls .card .item .project-info .info {font-size: 1.125rem; padding-bottom: .4rem;}
-  .card-ls .card .item .project-info .info.list-type:not(:last-child) {padding-bottom: 1rem;}
-  .card-ls .card .item .project-info .info .key {border: 1px solid #6f6f6f; padding: .1rem .5rem .3rem; border-radius: 15px; margin-right: .5rem; margin-bottom: .1rem; display: inline-block;font-weight: 500;}
-  .card-ls .card .item .project-info .info .bullet {padding-top: .3rem;}
-  .card-ls .card .item .project-info .info .value {}
-  .card-ls .card .item .project-info .info .value li {display: flex; padding-bottom: .3rem;}
-  .card-ls .card .item .project-info .button {position: absolute; bottom:10px; right:10px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-top: auto;}
-  .card-ls .card .item .project-info .button a {color: #fff;background: #006afe;border-radius: 10px; font-size: 1.125rem; font-weight: 600; font-family: var(--ff-secondary); white-space: nowrap; padding: .7rem 1.5rem; transition: .3s var(--cubic2);}
+  #project .card-ls {display: flex; flex-direction: column; gap: 10rem; min-height: 100vh;}
+  #project .card-ls .card {margin: 0 auto; width: 100%; border-radius: 15px;  padding: 50px 40px; background: #000; position:sticky; top:0; min-height: 900px; }
+  #project .card-ls .card .project-name {font-size: 1.5rem; font-weight: 700; padding-bottom: 1rem; display: none;}
+  #project .card-ls .card .item {display: flex; gap: 1rem; position: relative; width: 100%; flex-direction: column; backdrop-filter: blur(10px); transition: .3s var(--cubic2);}
+  #project .card-ls .card .item .thumb {width: 100%; height: 350px;border-radius: 15px; overflow: hidden; background: #363636;  transition: .3s var(--cubic2);  }
+  #project .card-ls .card .item .thumb img {width: 100%; height: 100%; object-fit: cover;  border-radius: 15px;transform:scale(1);  transition: .5s var(--cubic2);}
+  #project .card-ls .card .item .project-info {width: 100%; height: auto; color:var(--white); background: rgba(31, 31, 31, 0.5); border-radius: 10px; padding: 3rem 2rem 4.5rem; display: flex; flex-direction: column; overflow: hidden; position: relative; justify-content: space-between;}
+  #project .card-ls .card .item .project-info .info {font-size: 1.125rem; padding-bottom: .4rem; }
+  #project .card-ls .card .item .project-info .info.list-type:not(:last-child) {padding-bottom: 1rem;}
+  #project .card-ls .card .item .project-info .info .key {border: 1px solid #6f6f6f; padding: .1rem .5rem .3rem; border-radius: 15px; margin-right: .5rem; margin-bottom: .1rem; display: inline-block;font-weight: 500;}
+  #project .card-ls .card .item .project-info .info .bullet {padding-top: .3rem;}
+  #project .card-ls .card .item .project-info .info .value {}
+  #project .card-ls .card .item .project-info .info .value li {display: flex; padding-bottom: .3rem;}
+  #project .card-ls .card .item .project-info .button {position: absolute; bottom:10px; right:10px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-top: auto;}
+  #project .card-ls .card .item .project-info .button a {color: #fff;background: #006afe;border-radius: 10px; font-size: 1.125rem; font-weight: 600; font-family: var(--ff-secondary); white-space: nowrap; padding: .7rem 1.5rem; transition: .3s var(--cubic2);}
 
 
   @media (hover:hover) {
-    .card-ls .card .item:hover {opacity:1; }
-    .card-ls .card .item:hover .project-info .button a {background: #fff; color: #006afe;transform:translateY(-5px);}
-    .card-ls .card .item:hover .thumb img {transform:scale(1.02);}
+    #project .card-ls .card .item:hover {opacity:1; }
+    #project .card-ls .card .item:hover .project-info .button a {background: #fff; color: #006afe;transform:translateY(-5px);}
+    #project .card-ls .card .item:hover .thumb img {transform:scale(1.02);}
   }
   @media screen and (max-width:1399px){
-    .project-section .content {grid-template-columns: 1fr; gap: 2rem;}
-    .project-head {position: static;}
-    .project-head .project-title {font-size: 1.5rem;}
-    .project-head .info {font-size: 1rem;}
-    .card-ls {gap: 5rem;}
-    .card-ls .card {min-height:auto; position: static; padding: 50px 40px 18px;}
-    .card-ls .card .project-name {font-size: 1.25rem;}
-    .card-ls .card .item  {opacity: 1;}
-    .card-ls .card .item .project-info { background: transparent; padding: 0; gap: 1rem;}
-    .card-ls .card .item .project-info > ul {background: rgba(31, 31, 31, 0.5); padding: 1rem .5rem;}
-    .card-ls .card .item .project-info .info {font-size: 1rem;}
-    .card-ls .card .item .project-info .button {position: static; justify-content: flex-end;}
-    .card-ls .card .item .project-info .button a {font-size: 0.875rem;}
+    #project .project-section .content {grid-template-columns: 1fr; gap: 2rem;}
+    #project .project-head {position: static;}
+    #project .project-head .project-title {font-size: 1.5rem;}
+    #project .project-head .info {font-size: 1rem; white-space: normal; word-break: keep-all;}
+    #project .card-ls {gap: 5rem;}
+    #project .card-ls .card {min-height:auto; position: static; padding: 50px 40px 18px;}
+    #project .card-ls .card .project-name {font-size: 1.25rem;}
+    #project .card-ls .card .item  {opacity: 1;}
+    #project .card-ls .card .item .project-info { background: transparent; padding: 0; gap: 1rem;}
+    #project .card-ls .card .item .project-info > ul {background: rgba(31, 31, 31, 0.5); padding: 1rem .5rem;}
+    #project .card-ls .card .item .project-info .info {font-size: 1rem;}
+    #project .card-ls .card .item .project-info .button {position: static; justify-content: flex-end;}
+    #project .card-ls .card .item .project-info .button a {font-size: 0.875rem;}
   }
   @media screen and (max-width:767px){
-    .project-head .project-title {font-size: 1.125rem;}
-    .project-head .info {font-size: 0.875rem; word-break: keep-all; }
-    .card-ls {gap: 5rem;}
-    .card-ls .card {min-height:auto; padding: 0; background: transparent;}
-    .card-ls .card .project-name {font-size: 1rem;}
-    .card-ls .card .item {backdrop-filter: none;}
-    .card-ls .card .item .project-info {flex-direction: column; gap: .5rem; }
-    .card-ls .card .item .project-info > ul {padding: 0; background:transparent;}
-    .card-ls .card .item .project-info .info {font-size: 0.875rem; display: flex;flex-direction: column;  padding-bottom: 1rem;align-items: flex-start; word-break: keep-all;}
-    .card-ls .card .item .project-info .info .key {border-radius:10px; background: rgba(87, 87, 87, 0.3); border: none; margin:0 .5rem .3rem 0; padding: .1rem .5rem .2rem;}
-    .card-ls .card .item .project-info .info .value {padding-left: .5rem; word-break: keep-all;}
-    .card-ls .card .item .project-info .button {position: static; } 
-    .card-ls .card .item .project-info .button > a {padding: .4rem; width: 100%; text-align: center;} 
-    .card-ls .card .item .thumb {height: auto; background: transparent;}
+    #project .project-head .project-title {font-size: 1.125rem;}
+    #project .project-head .info {font-size: 0.875rem; word-break: keep-all; }
+    #project .card-ls {gap: 5rem;}
+    #project .card-ls .card {min-height:auto; padding: 0; background: transparent;}
+    #project .card-ls .card .project-name {font-size: 1rem;}
+    #project .card-ls .card .item {backdrop-filter: none;}
+    #project .card-ls .card .item .project-info {flex-direction: column; gap: .5rem; }
+    #project .card-ls .card .item .project-info > ul {padding: 0; background:transparent;}
+    #project .card-ls .card .item .project-info .info {font-size: 0.875rem; display: flex;flex-direction: column;  padding-bottom: 1rem;align-items: flex-start; word-break: keep-all;}
+    #project .card-ls .card .item .project-info .info .key {border-radius:10px; background: rgba(87, 87, 87, 0.3); border: none; margin:0 .5rem .3rem 0; padding: .1rem .5rem .2rem;}
+    #project .card-ls .card .item .project-info .info .value {padding-left: .5rem; word-break: keep-all;}
+    #project .card-ls .card .item .project-info .button {position: static; } 
+    #project .card-ls .card .item .project-info .button > a {padding: .4rem; width: 100%; text-align: center;} 
+    #project .card-ls .card .item .thumb {height: auto; background: transparent;}
   }
-}
 
 
 
