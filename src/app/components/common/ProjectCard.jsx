@@ -1,30 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-// const ANIMATION_CONFIG = {
-//     initial: {
-//         opacity: 0.6,
-//   },
-//     animate: {
-//         opacity: 1,
-//   },
-//     transition: {
-//         opacity: { duration: 0.3, delay: 0.2 },
-//         ease: [0.175, 0.885, 0.32, 1.275],
-//     },
-// };
+import { FiArrowUpRight } from "react-icons/fi";
 
 export default function ProjectCard({
-    item, index, cardRef, width,opacity, showDescription = true,
-}) { 
-
-    return (
-          <motion.div
+  item,
+  index,
+  cardRef,
+  width,
+  opacity,
+  showDescription = true,
+}) {
+  return (
+    <motion.div
       ref={cardRef}
       className="card"
       key={index}
-      style={{ width ,opacity}}
+      style={{ width, opacity }}
     >
       <div className="item">
         <span className="thumb">
@@ -74,11 +66,11 @@ export default function ProjectCard({
           </ul>
           <motion.span className="button">
             <Link target="_blank" href={item.link} className="btn">
-              View Project
+              View Project <FiArrowUpRight size={20} />
             </Link>
           </motion.span>
         </motion.div>
       </div>
     </motion.div>
-    )
+  );
 }
