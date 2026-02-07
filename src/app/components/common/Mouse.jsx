@@ -16,6 +16,7 @@ export default function Mouse() {
 
   // cursor-point 요소 위에 있는지 추적하는 상태
   const [isHovering, setIsHovering] = useState(false);
+  const [explosions, setExplosions] = useState([]);
 
   useEffect(() => {
     setMounted(true);
@@ -39,22 +40,101 @@ export default function Mouse() {
       }
     };
 
+    const handleClick = (e) => {
+      const id = Date.now();
+      setExplosions((prev) => [
+        ...prev,
+        {
+          id,
+          x: e.clientX,
+          y: e.clientY,
+        },
+      ]);
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("click", handleClick);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("click", handleClick);
+    };
   }, [mouseX, mouseY, isDesktop, mounted]);
+
+  const removeExplosion = (id) => {
+    setExplosions((prev) => prev.filter((e) => e.id !== id));
+  };
 
   //데스크톱이 아니면 렌더링하지 않음
   if (!isDesktop || !mounted) return null;
 
   return (
-    <motion.div
-      className={`mouse-circle ${isHovering ? "cursor-point-active" : ""}`}
-      style={{
-        x: cursorX,
-        y: cursorY,
-        scale: isHovering ? 0.7 : 1, //호버 시 크기 조정
-      }}
-      transition={{ type: "spring", stiffness: 500, damping: 28 }}
-    />
+    <>
+      <motion.div
+        className={`mouse-circle ${isHovering ? "cursor-point-active" : ""}`}
+        style={{
+          x: cursorX,
+          y: cursorY,
+          scale: isHovering ? 0.7 : 1, //호버 시 크기 조정
+        }}
+        transition={{ type: "spring", stiffness: 500, damping: 28 }}
+      />
+      {explosions.map((explosion) => (
+        <Explosion
+          key={explosion.id}
+          x={explosion.x}
+          y={explosion.y}
+          onComplete={() => removeExplosion(explosion.id)}
+        />
+      ))}
+    </>
+  );
+}
+
+const PARTICLE_COLORS = ["#39FF14", "#FF1493", "#00FFFF"]; // Neon Green, Neon Pink, Neon Cyan
+
+function Explosion({ x, y, onComplete }) {
+  const [particles] = useState(() => {
+    return Array.from({ length: 20 }).map(() => ({
+      angle: Math.random() * 360,
+      distance: Math.random() * 60 + 50, // 50-110px distance
+      color:
+        PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
+      size: Math.random() * 4 + 2,
+    }));
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(onComplete, 1000);
+    return () => clearTimeout(timer);
+  }, [onComplete]);
+
+  return (
+    <>
+      {particles.map((p, i) => (
+        <motion.div
+          key={i}
+          initial={{ x, y, opacity: 1, scale: 1 }}
+          animate={{
+            x: x + Math.cos((p.angle * Math.PI) / 180) * p.distance,
+            y: y + Math.sin((p.angle * Math.PI) / 180) * p.distance,
+            opacity: 0,
+            scale: 0,
+          }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          style={{
+            position: "fixed",
+            left: 0,
+            top: 0,
+            width: p.size,
+            height: p.size,
+            borderRadius: "50%",
+            backgroundColor: p.color,
+            pointerEvents: "none",
+            zIndex: 9999,
+          }}
+        />
+      ))}
+    </>
   );
 }

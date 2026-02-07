@@ -191,7 +191,7 @@ body {
 .main-typo { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 0; }
 .main-typo .parallax { overflow: hidden; white-space: nowrap; }
 .main-typo .parallax .scroller { display: flex; }
-.main-typo .parallax span { font-size: 12.5rem; font-weight: 700; line-height: 1; white-space: nowrap; display: block; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); color: transparent; }
+.main-typo .parallax span { font-size: 12.5rem; font-weight: 700; line-height: 1; white-space: nowrap; display: block; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); color: transparent; }
 
 @media screen and (max-width:767px){
   .main-typo .parallax span  {font-size: 6.25rem;}
