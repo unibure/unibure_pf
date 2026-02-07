@@ -12,18 +12,7 @@ export const BREAKPOINTS = {
 //화면 크기에 따라 반응형 값을 반환하는 커스텀 훅
 
 export function useResponsive(values) {
-  const [currentValue, setCurrentValue] = useState(() => {
-    //ssr 대응 : 초기값은 desktop 값으로 설정한다
-    if (typeof window !== "undefined") {
-      const width = window.innerWidth;
-      if (width <= BREAKPOINTS.mobile) {
-        return values.mobile;
-      } else if (width <= BREAKPOINTS.tablet) {
-        return values.tablet;
-      }
-    }
-    return values.desktop;
-  });
+  const [currentValue, setCurrentValue] = useState(values.desktop);
 
   useEffect(() => {
     const updateValue = () => {

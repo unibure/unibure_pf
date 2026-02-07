@@ -96,7 +96,9 @@ export default function Contact() {
             <div className="info cursor-point">
               <span className="key">Phone</span>
               <span className="value">
-                <span className="link">010-3141-2727</span>
+                <a href="tel:010-3141-2727" className="link">
+                  010-3141-2727
+                </a>
               </span>
             </div>
           </div>
